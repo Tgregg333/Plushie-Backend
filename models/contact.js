@@ -10,6 +10,9 @@ const contactSchema = new mongoose.Schema ({
     subject:{
         type: String
     },
+    message:{
+        type: String
+    },
 })
 
 const Contact = mongoose.model("Contact", contactSchema);

@@ -1,15 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+dotenv.config();
+connectDB();
 
 const contactRoutes = require("./routes/contactRoutes");
 const productRoutes = require("./routes/productRoutes");
 
 const app = express();
-
-dotenv.config();
-const connectDB = require("./config/db");
-connectDB();
 
 const PORT = process.env.PORT || 8080;
 
@@ -28,4 +27,14 @@ app.listen(PORT, () => {
 });
 
 
-
+//google strat
+// passport.use(
+//   new GoogleStrategy(
+//     {
+//       clientID: process.env.GOOGLE_CLIENT_ID,
+//       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//       callbackURL: "",
+//     },
+//     async (accessToken, refershToken, profile, done) =>
+//   )
+// )
